@@ -19,13 +19,13 @@ app.get("/userdata", (req, res) => { /// it take 2 paremeter. 1 route 1 one func
   res.send(userdata);
 });
 app.get("/", (req, res) => { 
-  res.sendFile(path.resolve(__dirname, "./Public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "./public", "index.html"));
 });
 app.get("/contacts", (req, res) => { 
-  res.sendFile(path.resolve(__dirname, "./Public", "contacts.html"));
+  res.sendFile(path.resolve(__dirname, "./public", "contacts.html"));
 });
 app.get("/stopwatch", (req, res) => { 
-  res.sendFile(path.resolve(__dirname, "./Public", "stopwatch.html"));
+  res.sendFile(path.resolve(__dirname, "./public", "stopwatch.html"));
 });
 app.listen(PORT, () =>
   console.log(`Server running on port ${PORT}`.yellow.bold)
