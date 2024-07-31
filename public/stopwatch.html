@@ -3,9 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>StopWatch</title>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #heading{
+            color: white;
+        }
+        .watch{
+            width: 500px;
+            background-color: beige;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            margin-top: 100px;
+        }
+        .display{
+            display: flex;
+            justify-content: center;
+            height: 80px;
+            width: 90%;
+            margin-top: 30px;
+            border: 2px;
+            border-color: yellow;
+            
+        }
+         .display h1 span{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 40px;
+            box-shadow: 0 0 10 black; 
+         }
+        
+        .keys{
+            width: 90%;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .keys button{
+            height: 40px;
+            width: 20%;
+            margin: 15px 10px;
+            border-radius: 5px;
+        }
+        /* h1 span{
+            text-align: center;
+            
+        } */
+    </style>
+        
 </head>
 <body>
-    <h1>stopwatch</h1>
+    <h1>STOPWATCH</h1>
+    
+    <div class="watch">
+        <div class="display">
+            <h1><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></h1>
+        </div>
+        <div class="keys">
+            <button class="btn" id="start">Start</button>
+            <button class="btn" id="pause">Pause</button>
+            <button class="btn" id="reset">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        
+            
+            document.getElementById("start").onclick=function(){
+                let h=document.getElementById("hours")
+                let m=document.getElementById("minutes")
+                let s=document.getElementById("seconds")
+                console.log(h,m,s)
+                
+                let sec = Number(s.innerText)
+                let min = Number(m.innerText)
+                let hour = Number(h.innerText)
+
+                let a=setInterval(()=>{
+                sec++
+                s.innerText=sec
+                let secstr=sec;
+                let hrstr=hour;
+                let minstr=min;
+                if(sec== 60)
+                {             
+                min++
+                m.innerText=min
+                sec =0
+                }
+                
+
+                if(min == 60)
+                {
+                    hour++
+                    h.innerText = hour
+                    min=0
+                }
+
+               
+                if(secstr<10){
+                    secstr="0"+secstr
+                }
+
+
+
+                document.getElementById("pause").onclick=function(){
+                clearInterval(a)
+                    }
+
+                document.getElementById("reset").onclick=function(){
+                sec=0
+                min=0
+                hour=0
+                s.innerText=sec
+                h.innerText=hour
+                m.innerText=min
+
+                }
+                    
+                
+            },100)
+        }
+
+           
+          
+            
+          
+    </script>
 </body>
 </html>

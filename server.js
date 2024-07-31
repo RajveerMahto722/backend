@@ -18,7 +18,7 @@ app.use(express.static(path.resolve(__dirname,"./Public")));
 app.get("/userdata", (req, res) => { /// it take 2 paremeter. 1 route 1 one function 
   res.send(userdata);
 });
-app.get("/Public", (req, res) => { 
+app.get("/", (req, res) => { 
   res.sendFile(path.resolve(__dirname, "./Public", "index.html"));
 });
 app.get("/contacts", (req, res) => { 
