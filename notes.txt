@@ -1,0 +1,17 @@
+http methods
+
+1. get: any inforamtion taken is served  to the server to the   frontend. 
+2 post: any inforamtion taken from frontend by the server
+3. put: any inforamtion updated  by the server to the frontend  
+4. delete: any inforamtion deleted by the server  to the frontend    
+5. patch: specific inforamtion updated by the server to the frontend   
+
+
+
+
+kisi bhi inforamtion ko create karna => POST 
+inforamtion KO update karna => PUT PATCH 
+delete karna =>  delete
+or read karna=> GET
+
+Browser prespective
